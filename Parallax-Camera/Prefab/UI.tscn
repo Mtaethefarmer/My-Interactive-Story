@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/UI.gd" type="Script" id=1]
+
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 400, 400 )
+script = ExtResource( 1 )
+
+[node name="ScreenPosLabel" type="Label" parent="."]
+margin_right = 141.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Touch Screen Position"
+
