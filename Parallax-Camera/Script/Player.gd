@@ -7,6 +7,8 @@ onready var Body = $KinematicBody2D
 export (int) var Speed = 200           #How fast the player moves on screen in pixels
 export (float) var GyroThreshold = 0.1 #Deadzone for gyroscope on phone
 export (bool) var Debug = true         #Flag for displaying additional info
+export (int) var MinimumHorzontalLimit = 0
+export (int) var MaximumHorizontalLimit = 20000
 
 #Private Variables
 var Velocity = Vector2()
@@ -17,6 +19,7 @@ func _ready():
 
 #warning-ignore:unused_argument
 func _process(delta):
+	$KinematicBody2D/Camera2D.position = global_position
 	#Make sure the player never leaves the camera view
 	position_bounds_check()
 
@@ -63,3 +66,7 @@ func position_bounds_check():
 		Body.position.y = $KinematicBody2D/Camera2D.limit_top
 	if Body.position.y > $KinematicBody2D/Camera2D.limit_bottom:
 		Body.position.y  = $KinematicBody2D/Camera2D.limit_bottom
+	if Body.global_position.x < MinimumHorzontalLimit:
+		Body.global_position.x = MinimumHorzontalLimit
+	if Body.global_position.x > MaximumHorizontalLimit:
+		Body.global_position.x = MaximumHorizontalLimit

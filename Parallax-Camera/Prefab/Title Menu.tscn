@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Font/NormalMenuHeader.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/NormalMenuOptions.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Script/Start.gd" type="Script" id=3]
+[ext_resource path="res://Script/Options.gd" type="Script" id=4]
+[ext_resource path="res://Script/Quit.gd" type="Script" id=5]
+
+[node name="Title Menu" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 1, 0.0156863, 0.258824 )
+
+[node name="Main" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -623.5
+margin_right = 623.5
+margin_bottom = 145.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "My Interactive Story"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -304.0
+margin_right = 200.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 300, 500 )
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 400, 200 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+text = "Start"
+script = ExtResource( 3 )
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+margin_top = 204.0
+margin_right = 400.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 400, 200 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+text = "Options"
+script = ExtResource( 4 )
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 408.0
+margin_right = 400.0
+margin_bottom = 608.0
+rect_min_size = Vector2( 400, 200 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+text = "Quit"
+script = ExtResource( 5 )
+
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="VBoxContainer/Options" method="_on_Options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]

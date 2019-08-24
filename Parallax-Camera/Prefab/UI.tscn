@@ -1,13 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Script/UI.gd" type="Script" id=1]
-
+[ext_resource path="res://Prefab/Title Menu.tscn" type="PackedScene" id=2]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 400, 400 )
 script = ExtResource( 1 )
+
+[node name="Title Menu" parent="." instance=ExtResource( 2 )]
 
 [node name="ScreenPosLabel" type="Label" parent="."]
 margin_right = 141.0
