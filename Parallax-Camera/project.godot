@@ -19,6 +19,10 @@ config/name="Parallax-Camera"
 run/main_scene="res://Prefab/UI.tscn"
 config/icon="res://Texture/icon.png"
 
+[autoload]
+
+Globals="*res://Script/Globals.gd"
+
 [display]
 
 window/size/width=1280

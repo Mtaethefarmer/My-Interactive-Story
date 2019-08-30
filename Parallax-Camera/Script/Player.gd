@@ -1,11 +1,14 @@
 extends Node2D
 
+#Globals
+onready var Globals = get_node("/root/Globals")
+
 #Alias for child nodes
 onready var Body = $KinematicBody2D
 
 #Public Variables
-export (int) var Speed = 200           #How fast the player moves on screen in pixels
-export (float) var GyroThreshold = 0.1 #Deadzone for gyroscope on phone
+export (int) var Speed              #How fast the player moves on screen in pixels
+export (float) var GyroThreshold
 export (bool) var Debug = true         #Flag for displaying additional info
 export (int) var MinimumHorzontalLimit = 0
 export (int) var MaximumHorizontalLimit = 20000
@@ -15,7 +18,9 @@ var Velocity = Vector2()
 var Gyroscope = Vector3() #Ranges from (0.0 - 1.0)
 
 func _ready():
-	pass
+	Speed = Globals.Player_Speed
+	GyroThreshold = Globals.Gyro_Threshold
+	$KinematicBody2D/Camera2D.smoothing_speed = Globals.Camera_Smoothing
 
 #warning-ignore:unused_argument
 func _process(delta):
@@ -70,3 +75,9 @@ func position_bounds_check():
 		Body.global_position.x = MinimumHorzontalLimit
 	if Body.global_position.x > MaximumHorizontalLimit:
 		Body.global_position.x = MaximumHorizontalLimit
+
+func set_gyrothreshold(value):
+	GyroThreshold = value
+	
+func get_gyrothreshold():
+	return GyroThreshold
