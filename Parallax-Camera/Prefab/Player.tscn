@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Script/Player.gd" type="Script" id=1]
 [ext_resource path="res://Texture/Icons/crosshair-blk.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Texture/Icons/menuListBlk.png" type="Texture" id=5]
 [ext_resource path="res://Texture/Icons/menuListWht.png" type="Texture" id=6]
 [ext_resource path="res://Script/TextureButton.gd" type="Script" id=7]
+[ext_resource path="res://Prefab/Tutorial.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -36,6 +37,7 @@ drag_margin_top = 0.1
 drag_margin_bottom = 0.1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -70,6 +72,8 @@ texture_pressed = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 7 )
+
+[node name="Tutorial" parent="." instance=ExtResource( 8 )]
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/ResetPosition" to="CanvasLayer/HBoxContainer/ResetPosition" method="_on_ResetPosition_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Menu" to="CanvasLayer/HBoxContainer/Menu" method="_on_TextureButton_pressed"]

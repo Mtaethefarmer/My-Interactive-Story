@@ -15,7 +15,7 @@
 
 [node name="Parallax-01" type="ParallaxLayer" parent="."]
 editor/display_folded = true
-motion_scale = Vector2( 0.1, 0.5 )
+motion_scale = Vector2( 1.1, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="sky" type="Sprite" parent="Parallax-01"]
@@ -28,7 +28,7 @@ texture = ExtResource( 2 )
 
 [node name="Parallax-02" type="ParallaxLayer" parent="."]
 editor/display_folded = true
-motion_scale = Vector2( 0.2, 0.5 )
+motion_scale = Vector2( 1.2, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="distantClouds" type="Sprite" parent="Parallax-02"]
@@ -37,7 +37,7 @@ texture = ExtResource( 3 )
 
 [node name="Parallax-03" type="ParallaxLayer" parent="."]
 editor/display_folded = true
-motion_scale = Vector2( 0.3, 0.5 )
+motion_scale = Vector2( 1.3, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="Clouds" type="Sprite" parent="Parallax-03"]
@@ -50,7 +50,7 @@ texture = ExtResource( 5 )
 
 [node name="Parallax-04" type="ParallaxLayer" parent="."]
 editor/display_folded = true
-motion_scale = Vector2( 0.4, 0.5 )
+motion_scale = Vector2( 1.4, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="hillTwo" type="Sprite" parent="Parallax-04"]
@@ -59,12 +59,12 @@ texture = ExtResource( 6 )
 
 [node name="Parallax-05" type="ParallaxLayer" parent="."]
 visible = false
-motion_scale = Vector2( 0.5, 0.5 )
+motion_scale = Vector2( 1.5, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="Parallax-06" type="ParallaxLayer" parent="."]
 editor/display_folded = true
-motion_scale = Vector2( 0.6, 0.5 )
+motion_scale = Vector2( 1.6, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="distantTrees" type="Sprite" parent="Parallax-06"]
@@ -73,12 +73,11 @@ texture = ExtResource( 7 )
 
 [node name="Parallax-07" type="ParallaxLayer" parent="."]
 visible = false
-motion_scale = Vector2( 0.7, 0.5 )
+motion_scale = Vector2( 1.7, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="Parallax-08" type="ParallaxLayer" parent="."]
-editor/display_folded = true
-motion_scale = Vector2( 0.8, 0.5 )
+motion_scale = Vector2( 1.8, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="trees" type="Sprite" parent="Parallax-08"]
@@ -87,12 +86,12 @@ texture = ExtResource( 8 )
 
 [node name="Parallax-09" type="ParallaxLayer" parent="."]
 visible = false
-motion_scale = Vector2( 0.9, 0.5 )
+motion_scale = Vector2( 1.9, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="Parallax-10" type="ParallaxLayer" parent="."]
 editor/display_folded = true
-motion_scale = Vector2( 0.9, 0.5 )
+motion_scale = Vector2( 2, 0.5 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="_01_ground" type="Sprite" parent="Parallax-10"]
@@ -100,8 +99,8 @@ position = Vector2( 1022.45, 772.919 )
 texture = ExtResource( 9 )
 
 [node name="Parallax-10-Object" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 1, 0.5 )
+motion_scale = Vector2( 2, 0.5 )
 
 [node name="Selectable" parent="Parallax-10-Object" instance=ExtResource( 10 )]
-position = Vector2( 7000, 1000 )
+position = Vector2( 2000, 1000 )
 

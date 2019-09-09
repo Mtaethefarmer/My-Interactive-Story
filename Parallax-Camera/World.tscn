@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 scroll_limit_end = Vector2( 40960, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 7000, 900 )
-MaximumHorizontalLimit = 15000
+position = Vector2( 1000, 900 )
+MinimumHorzontalLimit = -512
+MaximumHorizontalLimit = 512
 

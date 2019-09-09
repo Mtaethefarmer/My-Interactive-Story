@@ -1,0 +1,151 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Script/Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://Font/NormalMenuOptions.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Font/SmallMenuOptions.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Texture/Icons/phone.png" type="Texture" id=4]
+[ext_resource path="res://Texture/Icons/return.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Icons/crosshair-wht.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Icons/menuListWht.png" type="Texture" id=7]
+
+[node name="Tutorial" type="Control"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0.705882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="CanvasLayer/Background"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 330.0
+rect_min_size = Vector2( 330, 100 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.952941, 0.270588, 0.847059, 1 )
+text = "Tutorial"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Continue" type="Label" parent="CanvasLayer/Background/Title"]
+margin_left = 354.539
+margin_top = 30.6378
+margin_right = 649.539
+margin_bottom = 70.6378
+custom_fonts/font = ExtResource( 3 )
+text = "(Tap to continue.)"
+
+[node name="SwivelTutorial" type="VBoxContainer" parent="CanvasLayer/Background"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -603.347
+margin_top = -94.556
+margin_right = 250.653
+margin_bottom = 49.444
+rect_scale = Vector2( 1.4, 1.4 )
+alignment = 1
+
+[node name="Phone" type="TextureRect" parent="CanvasLayer/Background/SwivelTutorial"]
+margin_right = 854.0
+margin_bottom = 100.0
+texture = ExtResource( 4 )
+stretch_mode = 6
+
+[node name="SwivelLeft" type="TextureRect" parent="CanvasLayer/Background/SwivelTutorial/Phone"]
+margin_left = -60.0
+margin_top = -60.0
+margin_right = 771.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+stretch_mode = 4
+
+[node name="SwivelRight" type="TextureRect" parent="CanvasLayer/Background/SwivelTutorial/Phone"]
+margin_left = 910.749
+margin_top = -61.8532
+margin_right = 1741.75
+margin_bottom = 38.1468
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="SwivelText" type="Label" parent="CanvasLayer/Background/SwivelTutorial"]
+margin_top = 104.0
+margin_right = 854.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+text = "SWIVEL your phone to see everything in the world."
+
+[node name="OrientationTutorial" type="VBoxContainer" parent="CanvasLayer/Background"]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -623.938
+margin_top = -134.337
+margin_right = 207.062
+margin_bottom = 9.66339
+rect_scale = Vector2( 1.5, 1.5 )
+alignment = 1
+
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/Background/OrientationTutorial"]
+margin_right = 831.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+stretch_mode = 6
+
+[node name="OrientationTutorial" type="Label" parent="CanvasLayer/Background/OrientationTutorial"]
+margin_top = 68.0
+margin_right = 831.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+text = "Press the CROSSHAIR
+ to reset your orientation."
+align = 1
+
+[node name="MainMenuTutorial" type="VBoxContainer" parent="CanvasLayer/Background"]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -623.938
+margin_top = -134.337
+margin_right = 207.062
+margin_bottom = 9.66339
+rect_scale = Vector2( 1.5, 1.5 )
+alignment = 1
+
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/Background/MainMenuTutorial"]
+margin_right = 831.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 7 )
+stretch_mode = 6
+
+[node name="OrientationTutorial" type="Label" parent="CanvasLayer/Background/MainMenuTutorial"]
+margin_top = 104.0
+margin_right = 831.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
+text = "Press to return to the MAIN MENU"
+align = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
